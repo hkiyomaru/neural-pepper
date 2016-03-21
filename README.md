@@ -14,10 +14,10 @@ ROS(Robot Operating System) is a middleware to operate robots simply.
 
 And it supports Ubuntu(one of the Linux distributions) officially.
 
-If it is possible, native installed machine is better than virtual machine.
+If it is possible, a native installed machine is better than a virtual machine.
 
 
-####Ros packages
+####ROS packages
 
 When you get Ubuntu machine, open terminal and type these commands to install ROS.
 
@@ -91,6 +91,15 @@ $ source /opt/ros/indigo/setup.sh
 $ cd ../ && catkin_make
 ```
 
+I heard that catkin_make is doesn't work well in a paticular environment.
+
+This command may solve the problem.
+
+```
+$ sudo apt-get install ros-indigo-velodyne-pointcloud
+$ pip install catkin_pkg
+```
+
 To show details, please go to [the official page](http://wiki.ros.org/pepper/Tutorials).
 
 
@@ -137,9 +146,7 @@ Access [Windows Azure Marketplace](https://datamarket.azure.com/home) and regist
 And install python SDK.
 
 ```
-$ git clone git@github.com:openlabs/Microsoft-Translator-Python-API.git
-$ cd Microsoft-Translator-Python-API
-$ sudo python setup.py install
+$ pip install microsofttranslator
 ```
 
 Sorry to trouble you, but please tweak /scripts/node_runner:34.
