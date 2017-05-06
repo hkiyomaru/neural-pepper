@@ -1,25 +1,19 @@
-#Pepper with Neuraltalk
+# Pepper with Neuraltalk
 
 This is a program to operate Pepper with a joystick, and do Neuraltalk.
-
 To run this program, please set up [this server program](https://github.com/kiyomaro927/NeuraltalkServer).
 
-##Preparation
+## Preparation
 
-####Ubuntu
+### Ubuntu
 
-First of all, you should install Ubuntu.
-
-ROS(Robot Operating System) is a middleware to operate robots simply.
-
-And it supports Ubuntu(one of the Linux distributions) officially.
-
+You should run this app on Ubuntu because of using ROS.
+ROS (Robot Operating System) is a middleware to operate robots simply and it supports Ubuntu officially.
 If it is possible, a native installed machine is better than a virtual machine.
 
+### ROS packages
 
-####ROS packages
-
-When you get Ubuntu machine, open terminal and type these commands to install ROS.
+When you get Ubuntu machine, open your terminal and run following commands to install ROS.
 
 ```
 $ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -51,13 +45,11 @@ $ source ~/.bashrc
 $ sudo apt-get install python-rosinstall
 ```
 
-If you have trouble installing ROS, click [this link(Official page)](http://wiki.ros.org/ja/indigo/Installation/Ubuntu).
+If you have trouble installing ROS, check the [official page](http://wiki.ros.org/ja/indigo/Installation/Ubuntu).
 
+### ROS packages relating to Pepper
 
-####Ros packages relating to Pepper
-
-Next, install packages relating to Pepper.
-
+Next, install ROS packages relating to Pepper.
 First, install some additional ROS packages.
 
 ```
@@ -70,7 +62,7 @@ And get official packages relating to pepper.
 $ sudo apt-get install ros-indigo-pepper-.*
 ```
 
-To develop around pepper, please do this.
+To develop around pepper, please run following commands.
 
 ```
 $ mkdir -p ~/catkin_ws/src
@@ -78,21 +70,20 @@ $ cd ~/catkin_ws/src
 $ git clone https://github.com/ros-naoqi/naoqi_driver.git
 ```
 
-Get dependencies.
+Then, get dependencies.
 
 ```
 $ rosdep install -i -y --from-paths ./naoqi_driver
 ```
 
-Finally, build.
+Finally, build the app.
 
 ```
 $ source /opt/ros/indigo/setup.sh
 $ cd ../ && catkin_make
 ```
 
-I heard that catkin_make is doesn't work well in a paticular environment.
-
+I heard that catkin_make is does not work well in a paticular environment.
 This command may solve the problem.
 
 ```
@@ -100,21 +91,20 @@ $ sudo apt-get install ros-indigo-velodyne-pointcloud
 $ pip install catkin_pkg
 ```
 
-To show details, please go to [the official page](http://wiki.ros.org/pepper/Tutorials).
+To show details, please go to the [official page](http://wiki.ros.org/pepper/Tutorials).
 
 
-####Ros packages relating to Joystick
+### ROS packages relating to Joystick
 
-Next, install relating to joystick.
-
-Install the package.
+Next, install ROS packages relating to joystick.
+Install the packages.
 
 ```
 $ sudo apt-get install ros-indigo-joy
 $ sudo apt-get install ros-indigo-joystick-drivers
 ```
 
-Get dependencies and compile.
+Get dependencies and compile them.
 
 ```
 $ rosdep install joy
@@ -127,7 +117,7 @@ To make sure that joystick is working,
 $ sudo jstest /dev/input/jsX
 ```
 
-Cange permission.
+To change permission,
 
 ```
 $ sudo chmod a+rw /dev/input/jsX
@@ -139,7 +129,7 @@ We need to select appripriate joy node.
 $ rosparam set joy_node/dev "/dev/input/jsX"
 ```
 
-####Microsoft translator API
+### Microsoft translator API
 
 Access [Windows Azure Marketplace](https://datamarket.azure.com/home) and register an application.
 
@@ -149,9 +139,9 @@ And install python SDK.
 $ pip install microsofttranslator
 ```
 
-Sorry to trouble you, but please tweak /scripts/node_runner:34.
+Sorry to trouble you, but please tweak `/scripts/node_runner:34`.
 
-##Run
+## Run
 
 First, bring up roscore.
 
@@ -165,7 +155,7 @@ Run the joy node.
 $ rosrun joy joy_node
 ```
 
-And connect to pepper.
+Connect to pepper.
 
 ```
 $ roslaunch pepper_bringup pepper_full.launch nao_ip:=<yourRobotIP>
