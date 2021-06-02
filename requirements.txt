@@ -46,7 +46,7 @@ genmsg==0.5.6
 genpy==0.5.7
 gyp==0.1
 html5lib==0.999
-httplib2==0.8
+httplib2==0.19.0
 image-geometry==1.11.11
 interactive-markers==1.11.1
 keyring==3.5
