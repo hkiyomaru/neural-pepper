@@ -79,7 +79,7 @@ pepper-sensors-py==0.1.7
 pexpect==3.1
 piston-mini-client==0.7.5
 pluginlib==1.10.1
-psutil==1.2.1
+psutil==5.6.6
 pyOpenSSL==0.13
 pycrypto==2.6.1
 pycups==1.9.66
