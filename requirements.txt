@@ -70,7 +70,7 @@ naoqi-pose==0.5.3
 naoqi-sensors-py==0.5.3
 netifaces==0.8
 nose==1.3.1
-numpy==1.8.2
+numpy==1.22.0
 oauth==1.0.1
 oauthlib==0.6.1
 oneconf==0.3.7.14.04.1
