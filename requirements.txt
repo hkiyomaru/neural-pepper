@@ -101,7 +101,7 @@ qt-dotgraph==0.2.29
 qt-gui==0.2.29
 qt-gui-cpp==0.2.29
 qt-gui-py-common==0.2.29
-reportlab==3.0
+reportlab==3.5.55
 requests==2.2.1
 resource-retriever==1.11.6
 roman==2.0.0
