@@ -102,7 +102,7 @@ qt-gui==0.2.29
 qt-gui-cpp==0.2.29
 qt-gui-py-common==0.2.29
 reportlab==3.0
-requests==2.2.1
+requests==2.20.0
 resource-retriever==1.11.6
 roman==2.0.0
 rosbag==1.11.16
